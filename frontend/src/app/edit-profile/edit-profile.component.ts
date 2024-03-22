@@ -37,7 +37,16 @@ export class EditProfileComponent implements OnInit {
       next: (response) => {
         if ('message' in response) {
           alert(response.message);
-          this.router.navigate(['/dashboard', this.username]);
+
+          if (this.username === '') {
+            this.router.navigate(['/dashboard', this.currentUsername]);
+          }
+          else if (this.username !== '') {
+            this.router.navigate(['/dashboard', this.username]);
+          }
+          else {
+            this.router.navigate(['/']);
+          }
         }
       },
       error: (error) => {

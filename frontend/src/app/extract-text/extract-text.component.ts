@@ -1,27 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
-  selector: 'app-upload',
-  templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.scss']
+  selector: 'app-extract-text',
+  templateUrl: './extract-text.component.html',
+  styleUrls: ['./extract-text.component.scss']
 })
-export class UploadComponent implements OnInit {
+export class ExtractTextComponent implements OnInit {
 
   username: string = '';
 
-  title: string = '';
-  description: string = '';
   photo_base64: string = '';
 
-  constructor(private api: ApiService, private route: ActivatedRoute) { }
+  text: string = '';
+
+  constructor(private route: ActivatedRoute, private api: ApiService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.username = params.get('username')!;
     });
   }
+
 
   onFileSelected(event: any) {
     if (event.target.files && event.target.files[0]) {
@@ -39,19 +40,21 @@ export class UploadComponent implements OnInit {
   }
 
   onUpload() {
-    this.api.uploadPhoto({
-      nombre: this.title,
-      descripcion: this.description,
-      photo_base64: this.photo_base64
-      , username: this.username
+    this.api.extractText({
+      image_base64: this.photo_base64
     }).subscribe({
-      next: (response) => {
-        alert(response.message);
-      },
-      error: (error) => {
-        alert(error.error.message);
-      }
-    });
-  }
+      next: response => {
+        if ('message' in response) {
+          alert(response.message);
+        }
 
+        if ('detected_text' in response) {
+          this.text = response.detected_text;
+        }
+      },
+      error: error => {
+        console.error(error.error.message);
+      }
+    })
+  }
 }

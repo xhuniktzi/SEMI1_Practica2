@@ -1,0 +1,7 @@
+<form>
+    <label for="photo">Photo</label>
+    <input type="file" id="photo" name="photo" required (change)="onFileSelected($event)">
+    <button type="submit" (click)="onUpload()">Upload</button>
+</form>
+
+<p><b>Texto extraido: </b>{{ text }}</p>

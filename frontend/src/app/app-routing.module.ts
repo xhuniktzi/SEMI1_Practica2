@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'view-photos/:username', loadChildren: () => import('./view-photos/view-photos.module').then(m => m.ViewPhotosModule) },
   { path: 'edit-profile/:username', loadChildren: () => import('./edit-profile/edit-profile.module').then(m => m.EditProfileModule) },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'extract-text', loadChildren: () => import('./extract-text/extract-text.module').then(m => m.ExtractTextModule) },
   { path: '**', redirectTo: '/login' },
 ];
 

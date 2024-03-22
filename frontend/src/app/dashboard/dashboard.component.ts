@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   nickname: string = '';
   nombre: string = '';
   rutaFotoPerfil: string = '';
+  description: string = '';
 
   constructor(private route: ActivatedRoute, private api: ApiService) { }
 
@@ -37,6 +38,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
         if ('rutaFotoPerfil' in response) {
           this.rutaFotoPerfil = response.rutaFotoPerfil;
+        }
+
+        if ('descripcion' in response) {
+          this.description = response.descripcion;
         }
 
         if ('message' in response) {

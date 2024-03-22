@@ -1,6 +1,8 @@
 <form>
     <label for="title">Title</label>
     <input type="text" id="title" name="title" [(ngModel)]="title" required>
+    <label for="description">Description</label>
+    <input type="text" id="description" name="description" [(ngModel)]="description" required>
     <label for="photo">Photo</label>
     <input type="file" id="photo" name="photo" required (change)="onFileSelected($event)">
     <button type="submit" (click)="onUpload()">Upload</button>

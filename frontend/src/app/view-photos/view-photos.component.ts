@@ -11,7 +11,7 @@ import { IGetPhotosResponse } from '../models/IGetPhotosResponse';
 export class ViewPhotosComponent implements OnInit, AfterViewInit{
   username: string = '';
 
-  photosGroupByTag!: Array<{ etiqueta: string, fotos: Array<{ rutaFoto: string; titulo: string;}> }>;
+  photosGroupByTag!: Array<{ etiqueta: string, fotos: Array<{ rutaFoto: string; titulo: string; descripcion: string;}> }>;
 
   constructor(private router: ActivatedRoute, private api: ApiService){}
 
@@ -33,7 +33,7 @@ export class ViewPhotosComponent implements OnInit, AfterViewInit{
   }
 
   private processPhotos(photos: IGetPhotosResponse[]): void {
-    const groupByTag = new Map<string, Array<{rutaFoto: string; titulo: string;}>>();
+    const groupByTag = new Map<string, Array<{rutaFoto: string; titulo: string; descripcion: string;}>>();
 
     photos.forEach(photo => {
       photo.etiquetas.forEach(etiqueta => {
@@ -41,9 +41,9 @@ export class ViewPhotosComponent implements OnInit, AfterViewInit{
           groupByTag.set(etiqueta, []);
         }
         groupByTag.get(etiqueta)!.push({
-
           rutaFoto: photo.rutaFoto,
-          titulo: photo.titulo
+          titulo: photo.titulo,
+          descripcion: photo.descripcion
         });
       });
     });

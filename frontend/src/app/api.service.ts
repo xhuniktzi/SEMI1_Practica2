@@ -8,12 +8,14 @@ import { IGetProfileResponse } from './models/IGetProfileResponse';
 import { IUploadPhotoRequest } from './models/IUploadPhotoRequest';
 import { IUpdateProfileRequest } from './models/IUpdateProfileRequest';
 import { IGetPhotosResponse } from './models/IGetPhotosResponse';
+import { IExtractTextRequest } from './models/IExtractTextRequest';
+import { IExtractTextResponse } from './models/IExtractTextResponse';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  baseUrl = 'http://localhost:5000';
+  baseUrl = 'http://3.88.203.126:5000';
   constructor(private http: HttpClient) { }
 
   register(request: IRegistroRequest): Observable<IMessageResponse> {
@@ -38,5 +40,9 @@ export class ApiService {
 
   getPhotos(username: string): Observable<Array<IGetPhotosResponse>> {
     return this.http.get<Array<IGetPhotosResponse>>(`${this.baseUrl}/fotos/${username}`)
+  }
+
+  extractText(request: IExtractTextRequest): Observable<IMessageResponse | IExtractTextResponse> {
+    return this.http.post<IMessageResponse | IExtractTextResponse>(`${this.baseUrl}/extract_text`, request)
   }
 }

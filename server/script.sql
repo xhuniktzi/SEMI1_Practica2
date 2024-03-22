@@ -15,6 +15,7 @@ CREATE TABLE Usuarios (
 CREATE TABLE Fotos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(255) NOT NULL,
+    descripcion VARCHAR(255),
     rutaFoto VARCHAR(255) NOT NULL,
     usuarioId INT,
     FOREIGN KEY (usuarioId) REFERENCES Usuarios(id)
