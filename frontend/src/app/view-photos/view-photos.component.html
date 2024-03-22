@@ -1,0 +1,7 @@
+<div *ngFor="let tag of photosGroupByTag">
+    <p>{{ tag.etiqueta }}</p>
+    <div *ngFor="let photo of tag.fotos">
+        <p>{{ photo.titulo }}</p>
+        <img [src]='"https://practica1-g22-imagenes.s3.amazonaws.com/"+ photo.rutaFoto' />
+    </div>
+</div>

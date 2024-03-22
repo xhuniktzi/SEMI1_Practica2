@@ -1,0 +1,13 @@
+<form>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" [(ngModel)]="username" required>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" [(ngModel)]="password" required>
+    <br>
+    <app-webcam (imageCaptured)="handleCaptureImage($event)" [buttonVisible]="false"></app-webcam>
+    <br>
+    <button type="submit" (click)="submit()">Login</button>
+    <a routerLink="/register">Register</a>
+</form>
+
+
