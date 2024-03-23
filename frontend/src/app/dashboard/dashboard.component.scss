@@ -1,0 +1,51 @@
+.navbar {
+  background-color: #0080FF; /* Azul */
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-info img {
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.title {
+  color: #0080FF; /* Azul */
+}
+
+.nickname,
+.name {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.content-section {
+  margin-left: 20px;
+  padding: 20px;
+  background-color: #f0f0f0; /* Gris claro */
+  border-radius: 5px;
+}
+
+.description {
+  color: #0080FF; /* Azul */
+}

@@ -1,13 +1,27 @@
-<form>
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username" [(ngModel)]="username" required>
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" [(ngModel)]="name" required>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" [(ngModel)]="password" required>
-    <br>
-    <app-webcam (imageCaptured)="handleCaptureImage($event)"></app-webcam>
-    <br>
-    <button type="submit" (click)="submit()">Register</button>
-    <a routerLink="/login">Login</a>
-</form>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4 form-container">
+      <div class="image-container text-center">
+        <img class="form-image" src="https://cdn-icons-png.flaticon.com/128/5645/5645106.png" alt="Image">
+      </div>
+      <form>
+        <h2 class="text-center">Registro</h2>
+        <br>
+        <label class="form-label" for="username">Nombre de usuario</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" class="form-control" required>
+        <br>
+        <label class="form-label" for="name">Nombre completo</label>
+        <input type="text" id="name" name="name" [(ngModel)]="name" class="form-control" required>
+        <br>
+        <label class="form-label" for="password">Contraseña</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" class="form-control" required>
+        <br>
+        <app-webcam (imageCaptured)="handleCaptureImage($event)"></app-webcam>
+        <br>
+        <button type="submit" class="btn btn-primary btn-block" (click)="submit()">Registrarse</button>
+        <br>
+        <a routerLink="/login" class="text-center">¿Ya tienes cuenta? Inicia sesión aquí</a>
+      </form>
+    </div>
+  </div>
+</div>

@@ -15,7 +15,7 @@ import { IExtractTextResponse } from './models/IExtractTextResponse';
   providedIn: 'root'
 })
 export class ApiService {
-  baseUrl = 'http://3.88.203.126:5000';
+  baseUrl = 'http://3.91.186.180:5000';
   constructor(private http: HttpClient) { }
 
   register(request: IRegistroRequest): Observable<IMessageResponse> {

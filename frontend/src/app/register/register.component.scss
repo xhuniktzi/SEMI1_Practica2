@@ -1,0 +1,67 @@
+.container {
+  margin-top: 50px;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-label {
+  color: #0080FF; /* Azul */
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #0080FF; /* Azul */
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: #0080FF; /* Azul */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #005cb2; /* Azul más oscuro */
+}
+
+.text-center {
+  text-align: center;
+  color: #0080FF; /* Azul */
+}
+
+
+.form-button:disabled {
+  background-color: #b3b3b3; /* Gris */
+  cursor: not-allowed;
+}
+
+
+.container {
+  background-color: #f2f2f2; /* Gris claro */
+  padding: 10px;
+}
+
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.image-container {
+  margin-bottom: 20px;
+}
+
+
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #0080FF; /* Azul */
+}

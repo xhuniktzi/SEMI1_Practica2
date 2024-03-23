@@ -1,0 +1,41 @@
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #0080FF; /* Azul */
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #0080FF; /* Azul */
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .form-button {
+    background-color: #0080FF; /* Azul */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-button:hover {
+    background-color: #005cb2; /* Azul más oscuro */
+  }
+  
+  .form-button:disabled {
+    background-color: #b3b3b3; /* Gris */
+    cursor: not-allowed;
+  }
+  
+  .form-button:disabled {
+    background-color: #b3b3b3; /* Gris */
+    cursor: not-allowed;
+  }

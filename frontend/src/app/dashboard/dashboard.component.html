@@ -1,11 +1,45 @@
-<p>{{ nickname }}</p>
-<p> {{ nombre }}</p>
-<img [src]='"https://practica1-g22-imagenes.s3.amazonaws.com/"+ rutaFotoPerfil' alt="imagen" width="200" height="200">
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a [routerLink]="['/upload', username]" class="nav-link">Subir fotos</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/view-photos', username]" class="nav-link">Ver fotos</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/edit-profile', username]" class="nav-link">Editar perfil</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/extract-text']" class="nav-link">Extraer texto</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/login', username]" class="nav-link">Cerrar sesión</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-<p>{{ description }} </p>
-
-<a [routerLink]="['/upload', username]">Subir fotos</a>
-<a [routerLink]="['/view-photos', username]">Ver fotos</a>
-<a [routerLink]="['/edit-profile', username]">Editar perfil</a>
-<a [routerLink]="['/extract-text']">Extraer texto</a>
-<a [routerLink]="['/login', username]">Cerrar sesión</a>
+<div class="dashboard-container">
+  <div class="profile-section">
+    <div class="profile-info">
+      <img [src]='"https://practica1-g22-imagenes.s3.amazonaws.com/"+ rutaFotoPerfil' alt="Profile Image" width="100"
+        height="100" class="profile-image">
+      <div>
+        <h2 class="title">
+          Bienvenido a tu perfil {{ nickname }}
+        </h2>
+        <p class="nickname">USUARIO: {{ nickname }}</p>
+        <p class="name">NOMBRE: {{ nombre }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="content-section">
+    <p class="description">{{ description }}</p>
+  </div>
+</div>

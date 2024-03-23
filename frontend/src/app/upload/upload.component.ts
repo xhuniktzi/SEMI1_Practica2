@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms'; // Import FormGroup and FormBuilder
+
 
 @Component({
   selector: 'app-upload',

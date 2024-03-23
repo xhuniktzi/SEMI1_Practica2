@@ -1,0 +1,55 @@
+.tag-container {
+  margin-bottom: 30px;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.view-photos-heading {
+  font-size: 18px;
+  color: #0080FF; /* Azul */
+}
+
+.tag-label {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0080FF; /* Azul */
+}
+
+.photo-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.photo-item {
+  border: 1px solid #ddd; /* Borde gris */
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.photo-title {
+  font-weight: bold;
+}
+
+.photo-description {
+  margin-top: 5px;
+}
+
+.photo-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}

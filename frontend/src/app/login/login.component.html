@@ -1,13 +1,22 @@
-<form>
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username" [(ngModel)]="username" required>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" [(ngModel)]="password" required>
-    <br>
-    <app-webcam (imageCaptured)="handleCaptureImage($event)" [buttonVisible]="false"></app-webcam>
-    <br>
-    <button type="submit" (click)="submit()">Login</button>
-    <a routerLink="/register">Register</a>
-</form>
+<div class="container">
+  <div class="row">
+      <div class="col-md-4 offset-md-4">
+        <div class="image-container text-center">
+            <img class="form-image" src="https://cdn-icons-png.flaticon.com/128/8546/8546448.png" alt="Image">
+        </div>  
+        <form class="form-container">
 
-
+              <h2 class="form-title">Bienvenidos</h2>
+              
+              <label class="form-label" for="username">Username</label>
+              <input class="form-input" type="text" id="username" name="username" [(ngModel)]="username" required>
+              <label class="form-label" for="password">Password</label>
+              <input class="form-input" type="password" id="password" name="password" [(ngModel)]="password" required>
+              <app-webcam class="form-input" (imageCaptured)="handleCaptureImage($event)" [buttonVisible]="false"></app-webcam>
+              <button class="form-button" type="submit" (click)="submit()">Login</button>
+              <br>
+              <a routerLink="/register" class="form-label form-title text-center">Don't have an account? Register here</a>
+          </form>
+      </div>
+  </div>
+</div>

@@ -1,8 +1,14 @@
-<div *ngFor="let tag of photosGroupByTag">
-    <p>{{ tag.etiqueta }}</p>
-    <div *ngFor="let photo of tag.fotos">
-        <p>{{ photo.titulo }}</p>
-        <p>{{ photo.descripcion }}</p>
-        <img [src]='"https://practica1-g22-imagenes.s3.amazonaws.com/"+ photo.rutaFoto' />
+<div class="image-container text-center">
+    <img class="form-image" src="https://cdn-icons-png.flaticon.com/128/10225/10225084.png" alt="Image">
+    <h1 >Ver Fotos</h1>
+</div>  
+<div *ngFor="let tag of photosGroupByTag" class="tag-container">
+    <p class="tag-label">{{ tag.etiqueta }}</p>
+    <div class="photo-container">
+        <div *ngFor="let photo of tag.fotos" class="photo-item">
+            <p class="photo-title">{{ photo.titulo }}</p>
+            <p class="photo-description">{{ photo.descripcion }}</p>
+            <img class="photo-image" [src]='"https://practica1-g22-imagenes.s3.amazonaws.com/"+ photo.rutaFoto' />
+        </div>
     </div>
 </div>

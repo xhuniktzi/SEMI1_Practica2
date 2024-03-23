@@ -1,7 +1,16 @@
-<form>
-    <label for="photo">Photo</label>
-    <input type="file" id="photo" name="photo" required (change)="onFileSelected($event)">
-    <button type="submit" (click)="onUpload()">Upload</button>
+<form class="form-container">
+    <br>
+    <div class="image-container">
+        <img class="center" src="https://cdn-icons-png.flaticon.com/128/9850/9850902.png" alt="Image">
+    </div>
+    <br>
+    <h1 class="center">Extraer Texto</h1>
+    <hr>
+    <p class="text-label"><b>Texto extraido: </b></p>
+    <p class="text-value">{{ text }}</p>
+    <hr>
+    <label class="form-label" for="photo">Photo</label>
+    <input class="form-input" type="file" id="photo" name="photo" required (change)="onFileSelected($event)">
+    <button class="form-button" type="submit" (click)="onUpload()">Upload</button>
 </form>
 
-<p><b>Texto extraido: </b>{{ text }}</p>

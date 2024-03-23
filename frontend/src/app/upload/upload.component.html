@@ -1,9 +1,16 @@
-<form>
-    <label for="title">Title</label>
-    <input type="text" id="title" name="title" [(ngModel)]="title" required>
-    <label for="description">Description</label>
-    <input type="text" id="description" name="description" [(ngModel)]="description" required>
-    <label for="photo">Photo</label>
-    <input type="file" id="photo" name="photo" required (change)="onFileSelected($event)">
-    <button type="submit" (click)="onUpload()">Upload</button>
+<form class="form-container">
+    <br/>
+    <div class="image-container">
+        <img class="form-image" src="https://cdn-icons-png.flaticon.com/128/2499/2499108.png" alt="Image">
+    </div>
+    <br/>
+    <h1 class="center">Subir Fotos</h1>
+    <br/>    
+    <label class="form-label" for="title">Title</label>
+    <input class="form-input" type="text" id="title" name="title" [(ngModel)]="title" required>
+    <label class="form-label" for="description">Description</label>
+    <input class="form-input" type="text" id="description" name="description" [(ngModel)]="description" required>
+    <label class="form-label" for="photo">Photo</label>
+    <input class="form-input" type="file" id="photo" name="photo" required (change)="onFileSelected($event)">
+    <button class="form-button" type="submit" (click)="onUpload()">Upload</button>
 </form>
